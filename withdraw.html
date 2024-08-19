@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw</title>
+    <style>
+        body{
+            color: white;
+            background-color: gray;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+           
+        }
+        .main{
+            margin: auto;
+            background-color: rgb(244, 240, 240);
+            border-radius: 10px;
+            border: 2px solid black;
+            box-shadow: 0px 0px 20px black;
+            width: 50%;
+            height: 40%;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            
+        }
+        .main form input{
+            border-radius: 10px;
+            padding: 10px;
+            border: none;
+            text-align: left;
+            margin-bottom: 15px;
+            box-shadow: 0px 0px 10px black;
+        }
+        .main form label{
+            padding: 20px;
+        }
+        a{
+            text-decoration: double;
+            color: aqua;
+            font-size: 20px;
+            background-color: rebeccapurple;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            color: rgb(7, 7, 7);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 20px;
+            font-size: 25px;
+            border: none;
+            background-color: rgb(98, 98, 98);
+            cursor: not-allowed;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h2>Withdraw</h2>
+       <h4> Please Fill Requrid Field <br></h4>
+       <form action="">
+        <label for=""> Account Name:&nbsp; &nbsp; &nbsp; </label><input type="text" required placeholder="Enter Your Account Name"><br> 
+        <label for=""> Account Number:&nbsp;  </label><input type="text" required  placeholder="Enter Your Account Number"><br> 
+        <label for=""> Withdraw Amount:</label><input type="number" required placeholder="Enter Payment"> <br><br>
+        <button disabled>Submint</button>
+       </form>
+    </div>
+<marquee behavior="" direction="">You can't withdraw withdraw right now. You don't have any active plans. Activate the plan After that, if your account becomes active, you will be able to withdraw from it..
+    &nbsp;<a href="plan.html">Buy plan now</a></marquee>
+  
+</body>
+</html>

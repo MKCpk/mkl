@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Earn</title>
+    <style>
+        body{
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .main{
+            text-align: center;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 20px;
+            font-size: 25px;
+            border: none;
+            background-color: rgb(2, 248, 31);
+            box-shadow: 0px 0px 20px black;
+        }
+        button:hover{
+            background-color: darkgray;
+            
+        }
+        img{
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgb(55, 1, 248);
+        }
+        button:disabled {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+        .timer {
+            font-size: 14px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <h1>
+        Welcome to The Earning Page
+    </h1>
+    
+    <h5>
+        Welcome to Earning Page On this page you will find <mark> YouTube Tutorials</mark> <br>that show you how to earn absolutely free <br>Watch these videos and learn how to earn online The more you watch the video here, <br>the more points you will get
+    </h5>
+    <h2>For Free Online Earning Join Our Social Account </h2>
+    <a href="https://youtube.com/@empireskill"><button>Youtube</button></a>&nbsp; &nbsp;&nbsp; <a href="https://t.me/Empire_Skill_Official"><button>Telegram</button></a>
+
+    
+    <br><br>
+    <h2>
+        Copy Paste Work | Earn 500-600$ Monthly | The Best Way to Earn Online
+    </h2>
+    <img src="img/vd.webp" alt="Thumbnail" width="50%" height="10%"><br><br>
+    <a href="https://youtu.be/vmKaZEicJv4"><button id="earnBtn1" onclick="handleClick('earnBtn1',30)">Watch Video</button></a>
+    <p class="timer" id="timer1"></p>
+    <p>Topic:
+In this video, you have been told how to earn online by just writing book, Story's, Novels or  eBooks. How do you write books with chatGPT, then how to publish them and earn your money?
+
+In this video you are told how to earn online absolutely free. After watching this video, you will be able to earn 500 dollars per month from the comfort of your home, that too for free.</p>
+    <h2>
+        How To Earn Daily 5000 on Fiverr | Fiverr Best Skill 2024 | Free Earning Skill For Student 
+    </h2>
+    <img src="img/earn1.jpg" alt="Thumbnail" width="50%" height="10%"><br><br>
+     <a href="https://youtu.be/zHtDYC4K3Y8"><button id="earnBtn2" onclick="handleClick('earnBtn2', 30)">Watch Video</button></a>
+     <p class="timer" id="timer2"></p>
+     <p>How to Earn Money with Fiverr: A Step-by-Step Guide!
+
+        Earn money with Fiverr by writing Articles, Creating content, and more! In this video, we will show you a step-by-step guide on How to Make Money with Fiverr. From setting up your account to writing and publishing your content, we will cover it all. Learn how to turn your passion into profit and start making money with Fiverr today!
+        Watch this video to learn how to earn money with Fiverr and start your online earning journey today!
+        Earn Money by Using Chat GPT Watch And learn All And Start Your Earning Track.<br>
+       </p><br>
+        <h2>
+           How to Earn Money By Watch Videos | Add Watch Work | Free Watch Videos And Earn Money 
+        </h2>
+        <img src="img/earn2.jpg" alt="Thumbnail" width="50%" height="10%" ><br><br>
+         <a href="https://youtu.be/DX6w8h5pz9o"><button id="earnBtn3" onclick="handleClick('earnBtn3' , 30)">Watch Video</button></a>
+         <p class="timer" id="timer3"></p>
+         <p>Want to earn money online without investing a single penny? This video reveals a free website that pays you for watching videos! Yes, you read that right - get paid for doing something you love. No experience required, no investment needed. Simply watch, earn, and withdraw your cash rewards easily. Learn how to make money online easily and quickly. Watch now and start earning
+        </p>
+</div>
+
+
+<script>
+    const countdownInterval = 1000; // 1 second in milliseconds
+    const oneDayInMs = 86400000; // 24 hours in milliseconds
+
+    // Function to check and disable buttons if clicked within 24 hours
+    function checkButtonStatus(buttonId, timerId) {
+        const lastClicked = localStorage.getItem(buttonId);
+        const now = new Date().getTime();
+
+        // Check if 24 hours have passed
+        if (lastClicked && (now - lastClicked) < oneDayInMs) {
+            document.getElementById(buttonId).disabled = true;
+            const remainingTime = oneDayInMs - (now - lastClicked);
+            startCountdown(timerId, remainingTime, buttonId);
+        } else {
+            document.getElementById(timerId).innerText = "Video is ready!";
+        }
+    }
+
+    // Start the countdown timer
+    function startCountdown(timerId, remainingTime, buttonId) {
+        const interval = setInterval(function () {
+            remainingTime -= countdownInterval;
+
+            // Calculate hours, minutes, seconds
+            const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+            document.getElementById(timerId).innerText = `Time remaining: ${hours}h ${minutes}m ${seconds}s`;
+
+            // If time runs out, enable the button
+            if (remainingTime <= 0) {
+                clearInterval(interval);
+                document.getElementById(buttonId).disabled = false;
+                document.getElementById(timerId).innerText = "Video is ready!";
+            }
+        }, countdownInterval);
+    }
+
+    // Function to handle button click
+    function handleClick(buttonId, amount) {
+        // Disable the clicked button
+        document.getElementById(buttonId).disabled = true;
+
+        // Store the current time for this button in localStorage
+        localStorage.setItem(buttonId, new Date().getTime());
+
+        // Update the account balance in localStorage
+        let currentBalance = localStorage.getItem('accountBalance') || 0;
+        currentBalance = parseInt(currentBalance) + amount;
+        localStorage.setItem('accountBalance', currentBalance);
+
+        // Notify user
+        alert(`After Watching Full Video ,You have earned ${amount}Pkr. Your updated balance is ${currentBalance}Pkr. Don't cheat otherwise I will add your balance but you will not get Withdraw`);
+
+        // Start the countdown
+        startCountdown(`timer${buttonId.replace('earnBtn', '')}`, oneDayInMs, buttonId);
+    }
+
+    // Check status of all buttons on page load
+    checkButtonStatus('earnBtn1', 'timer1');
+    checkButtonStatus('earnBtn2', 'timer2');
+    checkButtonStatus('earnBtn2', 'timer2');
+
+</script>
+</body>
+</html>

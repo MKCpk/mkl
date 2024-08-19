@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Work</title>
+    <style>
+        body{
+            background-color: rgb(87, 84, 84);
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            width: 90%;
+            margin: auto;
+
+        }
+        .p{
+            border: 2px solid black;
+            width: 80%;
+            background-color: white;
+            color: black;
+            margin: auto;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px black;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            margin-bottom: 10px;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 20px;
+            font-size: 25px;
+            border: none;
+            background-color: rgb(2, 110, 65);
+            box-shadow: 0px 0px 20px black;
+        }
+        .abc{
+            text-align: center;
+            background-color: red;
+            color: white;
+            font-size: 40px;
+            
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 20px;
+            font-size: 25px;
+            border: none;
+            background-color: rgb(2, 248, 31);
+            box-shadow: 0px 0px 20px black;
+        }
+    </style>
+</head>
+<body>
+    <H1 class="abc">POST WORK</H1>
+    <h3>Welcome To Add Psot Work</h3>
+    <div class="main">
+        <h1>Mam Kinza Work</h1>
+        <p><mark>
+            This section For Only Mam Kinza Members....
+        </mark>
+    <marquee behavior="" direction=""><h1>Today Post</h1></marquee>
+    <div class="p">
+<h3 id="textDiv">
+    <button onclick="copyToClipboard()">Copy Text</button> <br>
+
+    اگر اپ انویسٹمنٹ کر کر کے تھک چکے ہیں😥 اور اپ فیک کاموں سے تنگ اگئے ہیں 😔.
+تو اپ کو پریشان ہونے کی ضرورت نہیں ہے ہم اپ کو بالکل فری ورک  دے رہے ہیں🥳 کسی قسم کی کوئی بھی investment یا Registration fees نہیں لی جائے گی❤️ یہ نیچے ہمارا ٹیلی گرام چینل ہے اس کو اپ جوائن کیجیے یہاں پر سب ورک ہوگا 
+https://t.me/Empire_Skill_Official
+
+ساری ڈیٹیل اپ کو اس گروپ میں مل جائے گی مزید ڈیٹیل کے لیے اپ ایڈمن سے رابطہ کر سکتے ہیں.😍🔥
+</h3></div>
+</p>
+<h2>Submint Work </h2>
+<a href="https://www.facebook.com/share/z2X4CyFuUNW1KpBw/?mibextid=qi2Omg"><button>Profile</button></a>
+    </div>
+    <script>
+        function copyToClipboard() {
+            // Text ko div se get karna
+            var text = document.getElementById("textDiv").innerText;
+
+            // Ek temporary textarea create karna
+            var textarea = document.createElement("textarea");
+            textarea.value = text;
+
+            // Textarea ko document ke body mein add karna
+            document.body.appendChild(textarea);
+
+            // Text ko select aur copy karna
+            textarea.select();
+            document.execCommand("copy");
+
+            // Textarea ko remove karna
+            document.body.removeChild(textarea);
+
+            alert("Text copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
