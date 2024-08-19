@@ -13,7 +13,7 @@
             text-align: center;
         }
         button{
-            width: 150px;
+            width: 200px;
             height: 50px;
             color: white;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -89,70 +89,9 @@ In this video you are told how to earn online absolutely free. After watching th
 
 
 <script>
-    const countdownInterval = 1000; // 1 second in milliseconds
-    const oneDayInMs = 86400000; // 24 hours in milliseconds
-
-    // Function to check and disable buttons if clicked within 24 hours
-    function checkButtonStatus(buttonId, timerId) {
-        const lastClicked = localStorage.getItem(buttonId);
-        const now = new Date().getTime();
-
-        // Check if 24 hours have passed
-        if (lastClicked && (now - lastClicked) < oneDayInMs) {
-            document.getElementById(buttonId).disabled = true;
-            const remainingTime = oneDayInMs - (now - lastClicked);
-            startCountdown(timerId, remainingTime, buttonId);
-        } else {
-            document.getElementById(timerId).innerText = "Video is ready!";
-        }
-    }
-
-    // Start the countdown timer
-    function startCountdown(timerId, remainingTime, buttonId) {
-        const interval = setInterval(function () {
-            remainingTime -= countdownInterval;
-
-            // Calculate hours, minutes, seconds
-            const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-
-            document.getElementById(timerId).innerText = `Time remaining: ${hours}h ${minutes}m ${seconds}s`;
-
-            // If time runs out, enable the button
-            if (remainingTime <= 0) {
-                clearInterval(interval);
-                document.getElementById(buttonId).disabled = false;
-                document.getElementById(timerId).innerText = "Video is ready!";
-            }
-        }, countdownInterval);
-    }
-
-    // Function to handle button click
-    function handleClick(buttonId, amount) {
-        // Disable the clicked button
-        document.getElementById(buttonId).disabled = true;
-
-        // Store the current time for this button in localStorage
-        localStorage.setItem(buttonId, new Date().getTime());
-
-        // Update the account balance in localStorage
-        let currentBalance = localStorage.getItem('accountBalance') || 0;
-        currentBalance = parseInt(currentBalance) + amount;
-        localStorage.setItem('accountBalance', currentBalance);
-
-        // Notify user
-        alert(`After Watching Full Video ,You have earned ${amount}Pkr. Your updated balance is ${currentBalance}Pkr. Don't cheat otherwise I will add your balance but you will not get Withdraw`);
-
-        // Start the countdown
+    const countdownInterval = 1000;const oneDayInMs = 86400000;function checkButtonStatus(buttonId, timerId) {const lastClicked = localStorage.getItem(buttonId);const now = new Date().getTime();if (lastClicked && (now - lastClicked) < oneDayInMs) {document.getElementById(buttonId).disabled = true;const remainingTime = oneDayInMs - (now - lastClicked);startCountdown(timerId, remainingTime, buttonId);} else {document.getElementById(timerId).innerText = "Video is ready!";}}function startCountdown(timerId, remainingTime, buttonId) {const interval = setInterval(function () { remainingTime -= countdownInterval;const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);document.getElementById(timerId).innerText = `Time remaining: ${hours}h ${minutes}m ${seconds}s`;// If time runs out, enable the buttonif (remainingTime <= 0) {clearInterval(interval);document.getElementById(buttonId).disabled = false;document.getElementById(timerId).innerText = "Video is ready!";}}, countdownInterval);}function handleClick(buttonId, amount) {document.getElementById(buttonId).disabled = true;localStorage.setItem(buttonId, new Date().getTime());let currentBalance = localStorage.getItem('accountBalance') || 0;currentBalance = parseInt(currentBalance) + amount;localStorage.setItem('accountBalance', currentBalance);alert(`After Watching Full Video ,You have earned ${amount}Pkr. Your updated balance is ${currentBalance}Pkr. Don't cheat otherwise I will add your balance but you will not get Withdraw`);
         startCountdown(`timer${buttonId.replace('earnBtn', '')}`, oneDayInMs, buttonId);
-    }
-
-    // Check status of all buttons on page load
-    checkButtonStatus('earnBtn1', 'timer1');
-    checkButtonStatus('earnBtn2', 'timer2');
-    checkButtonStatus('earnBtn2', 'timer2');
-
+    }    checkButtonStatus('earnBtn1', 'timer1');checkButtonStatus('earnBtn2', 'timer2');checkButtonStatus('earnBtn3', 'timer2');
 </script>
 </body>
 </html>
